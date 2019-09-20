@@ -5,7 +5,7 @@
 **Number of river segments:** 20
 
 ## Topography
-![Topography](https://github.com/PSUmodeling/PIHM-Simulations/blob/master/ColeFarm/images/topo.png "Topography")
+![Topography](https://github.com/PSUmodeling/PIHM-Simulations/blob/master/ShaleHills/images/topo.png "Topography")
 The surface terrain map was obtained from lidar measurements.
 
 ## Soil
