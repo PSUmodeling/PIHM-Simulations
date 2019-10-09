@@ -2,7 +2,8 @@
 **Location:** 40.667 &deg;N, 77.903 &deg;W<br>
 **Total area:** 0.08 km<sup>2</sup><br>
 **Number of triangular grids:** 535<br>
-**Number of river segments:** 20
+**Number of river segments:** 20<br>
+**Calibration:** Manually calibrated using *in situ* discharge, water table, COSMOS, sensible and latent heat fluxes, and soil temperature measurements.
 
 ## Topography
 ![Topography](https://github.com/PSUmodeling/PIHM-Simulations/blob/master/ShaleHills/images/topo.png "Topography")

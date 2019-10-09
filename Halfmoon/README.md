@@ -2,7 +2,8 @@
 **Location:** 40.698 &deg;N, 78.016 &deg;W<br>
 **Total area:** 62.64 km<sup>2</sup><br>
 **Number of triangular grids:** 694<br>
-**Number of river segments:** 101
+**Number of river segments:** 101<br>
+**Calibration:** Manually calibrated to USGS [BaSE](https://www.usgs.gov/software/pennsylvania-baseline-streamflow-estimator-base) data.
 
 ## Topography
 ![Topography](https://github.com/PSUmodeling/PIHM-Simulations/blob/master/Halfmoon/images/topo.png "Topography")
