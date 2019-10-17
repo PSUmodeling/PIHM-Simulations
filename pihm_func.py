@@ -312,7 +312,15 @@ def main():
     # Write README.md
     readme = open(simulation + '/README.md', 'w')
     readme.write('# Watershed\n\n')
-    readme.write('**Location:** %.3f &deg;N, %.3f &deg;W<br>\n' %(latitude, -longitude))
+    readme.write('**Location:** ')
+    if latitude >= 0.0:
+        readme.write('%.3f &deg;N, ' %(latitude))
+    else:
+        readme.write('%.3f &deg;S, ' %(-latitude))
+    if longitude >= 0.0:
+        readme.write('%.3f &deg;E<br>\n' %(longitude))
+    else:
+        readme.write('%.3f &deg;W<br>\n' %(-longitude))
     readme.write('**Total area:** %.2f km<sup>2</sup><br>\n' %(total_area(x, y, trimat)))
     readme.write('**Number of triangular grids:** %d<br>\n' %(nelem))
     readme.write('**Number of river segments:** %d<br>\n' %(nriver))
