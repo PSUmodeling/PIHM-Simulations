@@ -13,10 +13,10 @@ from textwrap import wrap
 
 
 def read_mesh(simulation):
-
     filen = simulation + '/' + simulation + '.mesh'
 
-    # Read mesh file into an array of strings with '#' and leading white spaces removed
+    # Read mesh file into an array of strings with '#' and leading white spaces
+    # removed
     meshstr = []
     with open(filen) as file:
         for line in file:
@@ -60,7 +60,6 @@ def read_mesh(simulation):
 
 
 def read_river(simulation):
-
     filen = simulation + '/' + simulation + '.riv'
 
     # Read river file into an array of strings with '#' and leading white spaces removed
@@ -84,7 +83,6 @@ def read_river(simulation):
     return (nriver, from_node, to_node)
 
 def read_attrib(simulation):
-
     filen = simulation + '/' + simulation + '.att'
 
     attribstr = []
@@ -107,7 +105,6 @@ def read_attrib(simulation):
 
 
 def read_lsm(simulation):
-
     filen = simulation + '/' + simulation + '.lsm'
 
     # Read lsm file into an array of strings with '#' and leading white spaces removed
@@ -125,7 +122,6 @@ def read_lsm(simulation):
 
 
 def lutype(lu):
-
     lutext = [
         r'Evergreen Needleleaf Forest',
         r'Evergreen Broadleaf Forest',
@@ -172,7 +168,6 @@ def lutype(lu):
 
 
 def lucolor(lu):
-
     lucmap = [
     [0,   128, 0  ],    # Evergreen Needleleaf Forest
     [0,   255, 0  ],    # Evergreen Broadleaf Forest
@@ -227,6 +222,8 @@ def total_area(x, y, trimat):
 
 
 def main():
+    if len(sys.argv) != 2:
+        raise ValueError('Please specify a project to be plotted.')
 
     simulation = str(sys.argv[1])
 
@@ -239,8 +236,10 @@ def main():
     domain_shape = (np.max(x) - np.min(x)) / (np.max(y) - np.min(y))
 
     # Create line collection of river segments for plotting
-    lines = [[(x[from_node[i]], y[from_node[i]]), (x[to_node[i]], y[to_node[i]])] for i in range(nriver)]
-    river_segments = LineCollection(lines, linewidths=3, colors='blue', linestyle='solid')
+    lines = [[(x[from_node[i]], y[from_node[i]]),
+              (x[to_node[i]], y[to_node[i]])] for i in range(nriver)]
+    river_segments = LineCollection(lines, linewidths=3, colors='blue',
+                                    linestyle='solid')
 
     matplotlib.rc('text', usetex='True')
     matplotlib.rc('font', **{'family': 'serif', 'serif': ['Computer Modern']})
@@ -251,8 +250,8 @@ def main():
         ax = fig.add_axes([0, 0, 0.8, 1])
     else:
         ax = fig.add_axes([0, 0.2, 1, 0.8])
-    tpc = ax.tripcolor(x, y, trimat, facecolors=zmax, edgecolors='k', alpha = 0.9,
-        lw=0.1, cmap='terrain')
+    tpc = ax.tripcolor(x, y, trimat, facecolors=zmax, edgecolors='k',
+                                     alpha = 0.9, lw=0.1, cmap='terrain')
     ax.add_collection(river_segments)
     ax.set_aspect('equal')
     if domain_shape < 1.33:
@@ -270,8 +269,8 @@ def main():
     # Plot soil types
     fig = plt.figure(figsize=(12,9))
     ax = fig.add_axes([0, 0, 1, 1])
-    tpc = ax.tripcolor(x, y, trimat, facecolors=soil, edgecolors='k', alpha = 0.9,
-        lw=0.1, cmap='viridis_r')
+    tpc = ax.tripcolor(x, y, trimat, facecolors=soil, edgecolors='k',
+                                      alpha = 0.9, lw=0.1, cmap='viridis_r')
     ax.set_aspect('equal')
     plt.axis('off')
     fig.savefig(simulation + '/images/soil.png')
