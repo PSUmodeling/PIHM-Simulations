@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import sys
+import os
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
@@ -240,6 +241,10 @@ def main():
               (x[to_node[i]], y[to_node[i]])] for i in range(nriver)]
     river_segments = LineCollection(lines, linewidths=3, colors='blue',
                                     linestyle='solid')
+
+    # Create images directory if don't exist
+    if not os.path.exists(simulation + '/images'):
+        os.mkdir(simulation + '/images')
 
     matplotlib.rc('text', usetex='True')
     matplotlib.rc('font', **{'family': 'serif', 'serif': ['Computer Modern']})
