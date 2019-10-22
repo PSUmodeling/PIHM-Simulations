@@ -2,6 +2,7 @@
 
 import sys
 import os
+import math
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
@@ -307,8 +308,9 @@ def main():
         fig.legend(handles=lh, bbox_to_anchor=([0.7, 0.2, 0.3, 0.6]),
             loc='center', borderaxespad=0, framealpha=0.9, fontsize=18)
     else:
+        ncol = math.ceil(len(lh) / 4)
         fig.legend(handles=lh, bbox_to_anchor=([0.2, 0.05, 0.6, 0.2]),
-            loc='center', borderaxespad=0, framealpha=0.9, fontsize=18)
+            loc='center', ncol=ncol, borderaxespad=0, framealpha=0.9, fontsize=18)
     ax.set_aspect('equal')
     plt.axis('off')
     fig.savefig(simulation + '/images/lc.png')
