@@ -1,5 +1,5 @@
-PRCP_CONC_TS    1   Pconc   2
-                    pH    NO3
+PRCP_CONC_TS    1   Pconc   2     # UNIT in mol/L
+                    pH    NO3   
 2007-01-02 00:00	4.6	1.38E-05
 2007-01-09 00:00	4.21	3.39E-05
 2007-01-16 00:00	4.29	4.65E-05
