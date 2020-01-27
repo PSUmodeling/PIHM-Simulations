@@ -3,9 +3,10 @@ ELEM    PRCPC   UNSAT   GW      FBR_UNSAT   FBR_GW
 2       1       1       1       2           2
 
 
-Condition sGW
-# concentrations and names of species of condition X.
-# recommanded order: aqueous primary, adsorption, cation exchange, mineral
+Condition sGW           
+# recommended order: aqueous primary, adsorption, cation exchange, mineral solid
+# aqueous unit: mol/L, except pH is dimensionless
+# solid unit: volume fraction (%), SSA (specific surface area): m2/g
 pH	         4.56
 NO3          1.0E-5
 C5H7O2N      1.00E-10
@@ -16,8 +17,9 @@ C5H7O2N(s)   0.0004     -ssa    5.0
 
 
 Condition dGW
-# concentrations and names of species of condition X.
-# recommanded order: aqueous primary, adsorption, cation exchange, mineral
+# recommended order: aqueous primary, adsorption, cation exchange, mineral solid
+# aqueous unit: mol/L, except pH is dimensionless
+# solid unit: volume fraction (%), SSA (specific surface area): m2/g
 pH	         4.56
 NO3          1.0E-5
 C5H7O2N      1.00E-10
