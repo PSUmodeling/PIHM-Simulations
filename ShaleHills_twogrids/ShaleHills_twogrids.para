@@ -8,7 +8,7 @@ SURF_MODE           2                   # surface overland flow formulation: 1 =
 RIV_MODE            2                   # river routing formulation: 1 = kinematic, 2 = diffusion
 START               2009-01-01 00:00    # simulation start time
 END                 2010-01-01 00:00    # simulation end time
-MAX_SPINUP_YEAR     5                  # maximum number of spinup years (if spinup simulation)
+MAX_SPINUP_YEAR     5                   # maximum number of spinup years (if spinup simulation)
 MODEL_STEPSIZE      60                  # model step size (s)
 LSM_STEP            900                 # land surface (ET) step size (s)
 ################################################################################

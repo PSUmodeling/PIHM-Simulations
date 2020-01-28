@@ -1,3 +1,4 @@
 NUMGEOL     1
 INDEX   KSATV       KSATH       MAXSMC  MINSMC  ALPHA   BETA
+#       m s-1       m s-1       m3 m-3  m3 m-3  m-1     -
 1       1.1E-6      1.1E-6      0.0370  0.00    1.18    2.0

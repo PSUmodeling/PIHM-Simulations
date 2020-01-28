@@ -11,7 +11,6 @@ CONDENSATION    1.0     # condensation factor
 AVGSCL          300     # reaction time step (s)
 OUTINTVL        DAILY   # output interval. Can be "YEARLY", "MONTHLY", "DAILY", "HOURLY", or any positive integer to indicate intervals in seconds. Setting interval to 0 will turn off output
 
-
 GLOBAL
 T_SPECIES       7       # number of total species including 1) primary species, 2) primary minerals, 3) primary adsorptions
 S_SPECIES       0       # number of secondary species
@@ -25,19 +24,16 @@ DISPERSION      0.10    # dispersion coefficient (m)
 CEMENTATION     1       # cementation factor
 TEMPERATURE     25      # assumed temperature for thermal decoupled mode
 
-
 PRIMARY_SPECIES         # list of all primary species
-pH	         
-NO3          
-C5H7O2N    
+pH
+NO3
+C5H7O2N
 soilN
 soilDN
 plantN
-C5H7O2N(s)  
-
+C5H7O2N(s)
 
 SECONDARY_SPECIES       # list of secondary species
-
 
 MINERALS                # list of minerals
 soilN          -label     default
@@ -45,11 +41,10 @@ soilDN         -label     default
 plantN         -label     default
 C5H7O2N(s)     -label     default
 
-
 PRECIPITATION_CONC      # precipitation concentration
 # aqueous unit: mol/L, except pH is dimensionless
 # solid unit: volume fraction (%), SSA (specific surface area): m2/g
-pH	         4.3
+pH           4.3
 NO3          2.0E-5
 C5H7O2N      1.00E-10
 soilN        0.02       -ssa    5.0
