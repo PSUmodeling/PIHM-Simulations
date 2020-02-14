@@ -36,6 +36,13 @@ HS              1.096   # parameter used in vapor pressure deficit function
 REFSMC          0.984   # soil moisture threshold where transpiration begins to stress
 WLTSMC          0.691   # wilting point
 
+DGW_CALIBRATION
+KSATH           5.0     # horizontal saturated hydraulic conductivity
+KSATV           0.817   # vertical saturated hydraulic conductivity
+POROSITY        0.310   # soil porosity
+ALPHA           1.034   # van Genuchten alpha
+BETA            0.962   # van Genuchten beta (n)
+
 BGC_CALIBRATION
 MORTALITY       9.0     # mortality turnover rate
 SLA             1.0     # canopy average projected SLA
