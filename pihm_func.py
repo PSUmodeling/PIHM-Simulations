@@ -311,6 +311,27 @@ def main():
     plt.axis('off')
     fig.savefig(simulation + '/images/lc.png')
 
+    # Plot forcing zones
+    fig = plt.figure(figsize=(12,9))
+    if domain_shape < 1.33:
+        ax = fig.add_axes([0, 0, 0.8, 1])
+    else:
+        ax = fig.add_axes([0, 0.2, 1, 0.8])
+    tpc = ax.tripcolor(x, y, trimat, facecolors=meteo, edgecolors='k',
+                                     alpha = 0.9, lw=0.1, cmap='viridis_r')
+    ax.set_aspect('equal')
+    if domain_shape < 1.33:
+        cbaxes = fig.add_axes([0.8, 0.2, 0.025, 0.6])
+        cbar = fig.colorbar(tpc, shrink=0.8, cax=cbaxes)
+    else:
+        cbaxes = fig.add_axes([0.2, 0.15, 0.6, 0.04])
+        cbar = fig.colorbar(tpc, orientation='horizontal', shrink=0.8,
+            cax=cbaxes)
+    cbar.set_label(label=r'Forcing zone', weight='bold', size=25)
+    cbar.ax.tick_params(labelsize=20)
+    ax.axis('off')
+    fig.savefig(simulation + '/images/meteo.png')
+
     # Write README.md
     readme = open(simulation + '/README.md', 'w')
     readme.write('# Watershed\n\n')
