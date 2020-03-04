@@ -7,7 +7,6 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
-from matplotlib import rc
 from matplotlib.collections import LineCollection
 from matplotlib.collections import PatchCollection
 from matplotlib.patches import Polygon
@@ -246,9 +245,6 @@ def main():
     # Create images directory if don't exist
     if not os.path.exists(simulation + '/images'):
         os.mkdir(simulation + '/images')
-
-    matplotlib.rc('text', usetex='True')
-    matplotlib.rc('font', **{'family': 'serif', 'serif': ['Computer Modern']})
 
     # Plot surface elevation
     fig = plt.figure(figsize=(12,9))
